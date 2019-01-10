@@ -41,11 +41,16 @@ body{
     -moz-border-radius-bottomright: 55px;
     border-top-left-radius: 55px;
     border-bottom-right-radius: 55px;
+    transition: all 0.3s ease-in-out;
 
 }
+
 .menu ul > li > a{
     text-decoration: none;
     color:white;
+}
+.menu ul > li > a:hover {
+    color:#B2250E;
 }
 .card{
     background-color:#670000;
@@ -57,4 +62,28 @@ body{
     margin:auto;
     padding: auto;
     font-size:20px;
+}
+.form{
+    box-sizing: border-box;
+    background-color:#b8b5af;
+    width:300px;
+    height:300px;
+    margin:auto;
+    padding:auto;
+    position: absolute;
+    top:calc(50% - 150px);
+    left:calc(50% - 150px);
+    text-align: center;
+    padding-top:70px;
+    -webkit-box-shadow: 10px 10px 20px 0px rgb(184,26,71);
+    -moz-box-shadow: 10px 10px 20px 0px rgb(184,26,71);
+    box-shadow: 10px 10px 20px 0px rgb(184,26,71);
+    border-radius: 15px;
+    font-size:20px;
+}
+.form input{
+    height:30px;
+    font-size:20px;
+    width:200px;
+    border-radius: 5px;
 }
