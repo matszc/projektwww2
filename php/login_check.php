@@ -3,13 +3,6 @@ session_start();
 
 require('connect_info.php');
 
-try{
-    $pdo = new PDO ("mysql:host=$host;dbname=$db_name", $db_login, $db_password);
-}
-catch(PDOException $e){
-    echo "Connection failed: " . $e->getMessage();
-    exit();
-}
 
 $login = $_POST['login'];
 $password = $_POST['password'];
@@ -25,4 +18,5 @@ if($rows_check==0)
 }
 
 header("Location: cms.php");
+$_SESSION['loged']=true;
 

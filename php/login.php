@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    if(isset($_SESSION['loged']))
+    {
+        header("Location: cms.php");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,10 +23,8 @@
         <input type="submit" value="zaloguj">
     </form>
     <?php
-         session_start();
-        if(isset($_SESSION['error']));
+        if(isset($_SESSION['error']))
         {
-            error_reporting(E_ALL ^ E_NOTICE);
             echo $_SESSION['error'];
             unset($_SESSION['error']);
         }
