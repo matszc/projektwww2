@@ -1,6 +1,6 @@
 <?php
 if(!isset($_GET['id'])){
-    header("Location: ./cms.php/?v=orders");
+    header("Location: ./cms.php?v=orders");
     exit();
 }
 
@@ -13,4 +13,4 @@ else
     $_SESSION['result'] = "<h3 class='text-center 'style='color:red'>Błąd</h3> ";
 
 
-header("Location: ./cms.php/?v=orders");
+header("Location: ./cms.php?v=orders");

@@ -1,7 +1,7 @@
 <?php
 
 if(!isset($_GET['id'])){
-    header("Location: ./cms.php/?v=orders");
+    header("Location: ./cms.php?v=orders");
     exit();
 }
 $id=$_GET['id'];

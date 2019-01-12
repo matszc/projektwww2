@@ -19,7 +19,7 @@
         if(file_exists($moduleDir))
         {
             ob_start();
-            include($moduleDir);
+            require($moduleDir);
             $content = ob_get_contents();
             ob_end_clean();
 

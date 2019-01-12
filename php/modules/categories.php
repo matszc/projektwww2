@@ -6,7 +6,7 @@
 
 ?>
 <h1 class="m-4">Kategorie</h1>
-<a href="./cms.php/?v=add_category"class="btn btn-primary m-3">Dodaj kategorie</a>
+<a href="./cms.php?v=add_category"class="btn btn-primary m-3">Dodaj kategorie</a>
 <?php
     if(isset($_SESSION['result']))
     {

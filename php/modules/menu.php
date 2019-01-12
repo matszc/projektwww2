@@ -17,7 +17,7 @@
     }
 ?>
 <table class="table table-hover">
-<a href="./cms.php/?v=add_food"class="btn btn-primary m-3">Dodaj pozycje</a>
+<a href="cms.php?v=add_food"class="btn btn-primary m-3">Dodaj pozycje</a>
 <tr>
     <th>Nazwa</th>
     <th>Składniki</th>

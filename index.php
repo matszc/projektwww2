@@ -1,3 +1,10 @@
+<?php
+require("php/connet_info.php");
+$caregories = 
+
+
+?>
+
 <!DOCTYPE HTML>
 <html lang="pl">
 <head>
@@ -31,8 +38,7 @@
             </ul>
         </div>
     </div>
-    <div class="pizza">
-    </div>
+        
 </div>
 </body>
 </html>
