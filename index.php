@@ -1,6 +1,7 @@
 <?php
-require("php/connet_info.php");
-$caregories = 
+require("php/connect_info.php");
+$result = $pdo->query("SELECT * FROM categories");
+$categories = $result->fetchAll();
 
 
 ?>
@@ -20,12 +21,12 @@ $caregories =
         </div>
         <div class="menu">
             <ul>
-                <li><a href="#">Zestawy</a></li>
-                <li><a href="#">Pizza</a></li>
-                <li><a href="#">Bezmiesne</a></li>
-                <li><a href="#">Pasty</a></li>
-                <li><a href="#">Sosy</a></li>
-                <li><a href="#">Napoje</a></li>
+                <li><a href="#zestaw">Zestawy</a></li>
+                <li><a href="#pizza">Pizza</a></li>
+                <li><a href="#bezmiesny">Bezmiesne</a></li>
+                <li><a href="#pasta">Pasty</a></li>
+                <li><a href="#sos">Sosy</a></li>
+                <li><a href="#napoj">Napoje</a></li>
             </ul>
         </div>
         <div class="card">
@@ -36,6 +37,42 @@ $caregories =
                 <li>paluszki z kurczaka+ zupa już za 13,00 zł</li>
                 <li>zeberka pieczone w kapuscie + zupa już za 13,00 zł</li>
             </ul>
+        </div>
+        <div class="content">
+        <form action="php/sum.php" method="post">
+            <?php 
+                foreach($categories as $category){
+            ?>
+            <table id="<?php echo $category['name']?>"frame="box">
+                <thead>
+                    <tr>
+                        <th><?php echo $category['name']?> </th>
+                        <th>Składniki</th>
+                        <th>Cena</th>
+                        <th>Zamów</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                        $id=$category['categorieID'];
+                        $result1 = $pdo->query("SELECT * FROM menu WHERE categorieID='$id'");
+                        $menu = $result1->fetchAll();
+                        foreach($menu as $food){
+                    ?>  
+
+                        <tr>
+                            <td><?php echo $food['name'] ?></td>
+                            <td><?php echo $food['components'] ?></td>
+                            <td><?php echo $food['cena']."zł" ?></td>
+                            <td><input type="checkbox" name="<?php echo$food['foodID'] ?>"></td>
+                        </tr>
+                        <?php } ?>
+                        </tbody>  
+            </table>
+
+            <?php } ?>
+            <input class="button" type="submit" value="Zamów">
+            </form>
         </div>
     </div>
         
