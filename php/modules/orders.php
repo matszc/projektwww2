@@ -9,6 +9,13 @@
 
 ?>
 <h1 class="m-4">Zamówienia</h1>
+<?php
+    if(isset($_SESSION['result']))
+    {
+        echo $_SESSION['result'];
+        unset($_SESSION['result']);
+    }
+?>
 <table class="table table-hover">
     <tr>
         <th>Imie i nazwisko</th>

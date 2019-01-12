@@ -11,9 +11,11 @@ $category = $_POST['categoryID'];
     $add=$pdo->query("INSERT INTO menu VALUES (NULL, '$name', '$components'
     , '$price', '$category')");
     if($add)
-        echo "<h3 class='text-center 'style='color:green'>Dodano</h3> ";
-    else
-        echo "<h3 class='text-center 'style='color:red'>Błąd</h3> ";
+    $_SESSION['result'] = "<h3 class='text-center 'style='color:green'>Dodano</h3> ";
+else
+    $_SESSION['result'] = "<h3 class='text-center 'style='color:red'>Błąd</h3> ";
+    
+header("Location: ./cms.php?v=menu");
 }
 ?>
 

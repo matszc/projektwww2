@@ -17,11 +17,13 @@ if(isset($_POST['name']))
  $category = $_POST['categoryID'];
      $edit=$pdo->query("UPDATE menu SET name='$name', components='$components', cena='$price', 
      categorieID='$category' WHERE foodID = '$id' ");
-     if($edit)
-        echo "<h3 class='text-center 'style='color:green'>Zmieniono</h3> ";
-    else
-         echo "<h3 class='text-center 'style='color:red'>Błąd</h3> ";
- }
+    if($edit)
+    $_SESSION['result'] = "<h3 class='text-center 'style='color:green'>Zmieniono</h3> ";
+else
+    $_SESSION['result'] = "<h3 class='text-center 'style='color:red'>Błąd</h3> ";
+    
+header("Location: ./cms.php?v=menu");
+}
 ?>
 
 

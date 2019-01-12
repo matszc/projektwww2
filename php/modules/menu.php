@@ -9,6 +9,13 @@
 
 <h1 class="m-3">Menu</h1>
 
+<?php
+    if(isset($_SESSION['result']))
+    {
+        echo $_SESSION['result'];
+        unset($_SESSION['result']);
+    }
+?>
 <table class="table table-hover">
 <a href="./cms.php/?v=add_food"class="btn btn-primary m-3">Dodaj pozycje</a>
 <tr>
