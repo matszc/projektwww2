@@ -1,16 +1,20 @@
 <?php
+
     session_start();
     if(!isset($_SESSION['loged']))
         header('Location: login.php');
 
         require("connect_info.php");
 
-        if(!array_key_exists("v", $_GET))
+        if(array_key_exists("v", $_GET))
         {
-            $_GET['v']="orders";
+            $module = $_GET['v'];
+        }
+        else{
+            $module = 'orders';
         }
 
-        $moduleDir = "modules/" . $_GET['v'] . ".php";
+        $moduleDir = "modules/" . $module . ".php";
 
         if(file_exists($moduleDir))
         {

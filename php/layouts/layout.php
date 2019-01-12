@@ -7,13 +7,13 @@
 <body>
     <div class="navbar navbar-dark bg-dark">
      <ul class="navbar-nav flex-row">
-        <li class="nav-item mr-3"><a class="nav-link" href="cms.php?v=orders">Zamowienia</a></li>
-        <li class="nav-item mr-3"><a class="nav-link" href="cms.php?v=menu">Dania</a></li>
-        <li class="nav-item mr-3"><a class="nav-link" href="cms.php?v=categories">Kategorie</a></li>
-        <li class="nav-item mr-3"><a class="nav-link" href="log_out.php">Wyloguj</a></li>
+        <li class="nav-item mr-3"><a class="nav-link" href="./cms.php?v=orders">Zamowienia</a></li>
+        <li class="nav-item mr-3"><a class="nav-link" href="./cms.php?v=menu">Dania</a></li>
+        <li class="nav-item mr-3"><a class="nav-link" href="./cms.php?v=categories">Kategorie</a></li>
+        <li class="nav-item mr-3"><a class="nav-link" href="./log_out.php">Wyloguj</a></li>
      </ul>
     </div>
-    <div  class="conteiner">
+    <div  class="container">
     <?php
         echo $content;
     ?>

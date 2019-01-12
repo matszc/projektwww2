@@ -34,7 +34,7 @@
             else
             echo "W trakcie";
             ?></td>
-            <td><a href="cms.php?v=change_order&id=<?php echo $order['orderID'] ?>" class="btn btn-success">Zmień status</a></td>
+            <td><a href="./cms.php?v=change_order&id=<?php echo $order['orderID'] ?>" class="btn btn-success">Zrealizowane</a></td>
         </tr>
 
     <?php } ?>
