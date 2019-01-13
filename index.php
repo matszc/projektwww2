@@ -64,16 +64,20 @@ $categories = $result->fetchAll();
                             <td><?php echo $food['name'] ?></td>
                             <td><?php echo $food['components'] ?></td>
                             <td><?php echo $food['cena']."zł" ?></td>
-                            <td><input type="checkbox" name="<?php echo$food['foodID'] ?>"></td>
+                            <td><input type="checkbox" name="order[]" value="<?php echo$food['foodID'] ?>"></td>
                         </tr>
                         <?php } ?>
                         </tbody>  
             </table>
 
             <?php } ?>
-            <input class="button" type="submit" value="Zamów">
+            <div class="text-center">
+                <input class="button" type="reset" value="Wyczyść">
+                <input class="button" type="submit" value="Zamów">
+            </div>
             </form>
         </div>
+        
     </div>
         
 </div>
