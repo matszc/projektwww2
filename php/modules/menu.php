@@ -1,11 +1,23 @@
 <?php
-
+if(isset($_POST['search'])) {
+    $name=$_POST['search'];
+    $result=$pdo->query("SELECT menu.foodID, menu.cena, menu.components, menu.name, categories.name 
+    AS catregoyName FROM menu INNER JOIN categories ON menu.categorieID=categories.categorieID
+    WHERE menu.cena='$name' OR menu.components='$name' OR menu.name='$name' OR categories.name='$name'
+    ORDER BY menu.categorieID")->fetchAll();
+}
+else{
     $result=$pdo->query("SELECT menu.foodID, menu.cena, menu.components, menu.name, categories.name 
     AS catregoyName FROM menu INNER JOIN categories ON menu.categorieID=categories.categorieID 
     ORDER BY menu.categorieID")->fetchAll();
+}
 
 ?>
+<form class="m-4" method="post" action="./cms.php?v=menu">
+<input type="text" name="search">
+<input type="submit" class="btn btn-secondary" value="Wyszukaj">
 
+</form>
 
 <h1 class="m-3">Menu</h1>
 

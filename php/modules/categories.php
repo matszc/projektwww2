@@ -1,10 +1,21 @@
 <?php
 
+if(isset($_POST['search'])) {
+    $name=$_POST['search'];
+    $result = $pdo->query("SELECT * FROM categories WHERE name='$name'");
+    $categories = $result->fetchAll();
+}
+else{
     $result = $pdo->query("SELECT * FROM categories");
     $categories = $result->fetchAll();
-
+}
 
 ?>
+<form class="m-4" method="post" action="./cms.php?v=categories">
+<input type="text" name="search">
+<input type="submit" class="btn btn-secondary" value="Wyszukaj">
+
+</form>
 <h1 class="m-4">Kategorie</h1>
 <a href="./cms.php?v=add_category"class="btn btn-primary m-3">Dodaj kategorie</a>
 <?php

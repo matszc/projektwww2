@@ -1,9 +1,9 @@
 <?php
 
 $host = 'localhost';
-$db_login = 'root';
-$db_password = '';
-$db_name='php_www';
+$db_login = 'phpmyadmin';
+$db_password = 'root';
+$db_name='phpmyadmin';
 
 try{
     $pdo = new PDO ("mysql:host=$host;dbname=$db_name", $db_login, $db_password);
