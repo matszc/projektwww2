@@ -47,7 +47,7 @@ else{
     <td><?php echo $menu['cena']."zł" ?></td>
     <td><?php echo $menu['catregoyName'] ?></td>
     <td><a href="cms.php?v=edit_food&id=<?php echo $menu['foodID'] . '&cname=' . $menu['catregoyName']?>" class="btn btn-success">Edytuj</a></td>
-    <td><a href="cms.php?v=delete_food&id=<?php echo $menu['foodID'] ?> " class="btn btn-danger">Usuń</a></td>
+    <td><a href="cms.php?v=delete_food&id=<?php echo $menu['foodID'] ?> " onlick="delete_confirm()" class="btn btn-danger delete">Usuń</a></td>
 </tr>
 
 <?php

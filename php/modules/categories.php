@@ -37,7 +37,7 @@ else{
         <tr>
             <td><?php echo $category['name']?></td>
             <td><a href="cms.php?v=edit_category&id=<?php echo $category['categorieID'] . '&cname=' . $category['name']?>" class="btn btn-success">Edytuj</a></td>
-            <td><a href="cms.php?v=delete_category&id=<?php echo $category['categorieID'] ?> " class="btn btn-danger">Usuń</a></td>
+            <td><a href="cms.php?v=delete_category&id=<?php echo $category['categorieID'] ?> " class="btn btn-danger delete">Usuń</a></td>
         </tr>
 
     <?php } ?>
