@@ -2,7 +2,7 @@
 
 if(isset($_POST['search'])) {
     $name=$_POST['search'];
-    $result = $pdo->query("SELECT * FROM categories WHERE name='$name'");
+    $result = $pdo->query("SELECT * FROM categories WHERE name LIKE '%$name%' ");
     $categories = $result->fetchAll();
 }
 else{

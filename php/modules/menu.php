@@ -3,7 +3,8 @@ if(isset($_POST['search'])) {
     $name=$_POST['search'];
     $result=$pdo->query("SELECT menu.foodID, menu.cena, menu.components, menu.name, categories.name 
     AS catregoyName FROM menu INNER JOIN categories ON menu.categorieID=categories.categorieID
-    WHERE menu.cena='$name' OR menu.components='$name' OR menu.name='$name' OR categories.name='$name'
+    WHERE menu.cena LIKE '%$name%' OR menu.components LIKE '%$name%' OR menu.name LIKE '%$name%' OR categories.name 
+    LIKE '%$name%'
     ORDER BY menu.categorieID")->fetchAll();
 }
 else{
